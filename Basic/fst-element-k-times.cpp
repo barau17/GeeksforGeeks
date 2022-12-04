@@ -1,15 +1,39 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
 class Solution{
-public:
-    //Function to reverse every sub-array group of size k.
-    void reverseInGroups(vector<long long>& arr, int n, int k){
-        for (int i = 0; i < n; i+=k) {
-            int fst = i, lst = i+k-1;
-            if (lst > n-1) lst = n-1;
-            while (fst < lst) {
-                swap(arr[fst], arr[lst]);
-                ++fst;
-                --lst;
-            }
+    public:
+    int firstElementKTime(int a[], int n, int k)
+    {
+        unordered_map<int, int> map;
+        for (int i = 0; i < n; i++) {
+            map[a[i]]++;
+            if (map[a[i]] == k)
+                return a[i];
         }
+        return -1;
     }
 };
+
+//{ Driver Code Starts.
+
+int main() {
+	int t;
+	cin >> t;
+	while(t--){
+	    int n, k;
+	    cin >> n >> k;
+	    int a[n];
+	    for(int i = 0;i<n;i++){
+	        cin >> a[i];
+	    }
+	    Solution ob;
+	    cout<<ob.firstElementKTime(a, n, k)<<endl;
+	}
+	
+	return 0;
+}
+// } Driver Code Ends
