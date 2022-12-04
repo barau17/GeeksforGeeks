@@ -1,2 +1,2 @@
-# LeetCode
-LeetCode solutions in C++
+# GeeksforGeeks
+GeeksforGeeks problems solutions
